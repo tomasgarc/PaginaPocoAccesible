@@ -67,15 +67,15 @@
             padding: 20px;
         }
 
+        article {
+            margin-bottom: 50px;
+        }
+
         img {
             width: 100%;
             height: 250px;
             object-fit: cover;
             border-radius: 5px;
-        }
-
-        article {
-            margin-bottom: 50px;
         }
 
         button {
@@ -94,6 +94,45 @@
             outline: 3px solid #ffffff;
         }
 
+        section {
+            margin-top: 50px;
+        }
+
+        form {
+            background: #1c1c1c;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 2px solid #ccc;
+            font-size: 16px;
+        }
+
+        input:focus, textarea:focus {
+            outline: 3px solid #ff4d4d;
+        }
+
+        .error {
+            color: #ff4d4d;
+            font-size: 14px;
+        }
+
+        video {
+            width: 100%;
+            margin-top: 20px;
+        }
+
         footer {
             background-color: #000;
             text-align: center;
@@ -106,6 +145,8 @@
 
 <body>
 
+<a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
 <header>
     <h1>Coches Extremos</h1>
 </header>
@@ -113,8 +154,7 @@
 <nav aria-label="Menú principal">
     <ul>
         <li><a href="#">Inicio</a></li>
-        <li><a href="#">Modelos</a></li>
-        <li><a href="#">Contacto</a></li>
+        <li><a href="#contacto">Contacto</a></li>
     </ul>
 </nav>
 
@@ -122,35 +162,73 @@
 
     <h2>Los mejores coches del mundo</h2>
 
+    <!-- COCHE 1 -->
     <article>
         <h3>Coche Deportivo</h3>
         <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c"
              alt="Coche deportivo rojo de alto rendimiento circulando por carretera">
         <p>Este coche es muy rápido y potente. Tiene un motor increíble y un diseño agresivo.</p>
-        <button aria-label="Ver más información sobre el coche deportivo">
+        <button aria-label="Más información sobre el coche deportivo">
             Más sobre el coche deportivo
         </button>
     </article>
 
+    <!-- COCHE 2 -->
     <article>
         <h3>Coche Eléctrico</h3>
         <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70"
              alt="Coche eléctrico moderno cargando en una estación de recarga">
         <p>Un coche moderno con tecnología avanzada y gran autonomía.</p>
-        <button aria-label="Ver más información sobre el coche eléctrico">
+        <button aria-label="Más información sobre el coche eléctrico">
             Más sobre el coche eléctrico
         </button>
     </article>
 
+    <!-- COCHE 3 -->
     <article>
         <h3>Coche Clásico</h3>
         <img src="https://images.unsplash.com/photo-1493238792000-8113da705763"
              alt="Coche clásico antiguo restaurado de color oscuro">
         <p>Un modelo antiguo con mucho estilo y personalidad.</p>
-        <button aria-label="Ver más información sobre el coche clásico">
+        <button aria-label="Más información sobre el coche clásico">
             Más sobre el coche clásico
         </button>
     </article>
+
+    <!-- MULTIMEDIA ACCESIBLE -->
+    <section>
+        <h3>Vídeo presentación</h3>
+
+        <video controls>
+            <source src="video.mp4" type="video/mp4">
+            <track src="subtitulos.vtt" kind="subtitles" srclang="es" label="Español" default>
+            Tu navegador no soporta vídeo HTML5.
+        </video>
+
+        <h4>Transcripción del vídeo</h4>
+        <p>
+            En este vídeo se muestra una presentación general de los coches deportivos,
+            eléctricos y clásicos, explicando sus principales características y ventajas.
+        </p>
+    </section>
+
+    <!-- FORMULARIO ACCESIBLE -->
+    <section id="contacto">
+        <h3>Formulario de contacto</h3>
+
+        <form aria-labelledby="contacto">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required aria-required="true">
+
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required aria-required="true">
+
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+
+            <button type="submit">Enviar mensaje</button>
+        </form>
+    </section>
 
 </main>
 
